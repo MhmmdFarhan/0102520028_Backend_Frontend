@@ -13,7 +13,7 @@ router.get("/", (req: Request, res: Response) => {
 
 // SEARCH
 router.get("/search/:keyword", (req: Request, res: Response) => {
-  const keyword = req.params.keyword.toLowerCase();
+  const keyword = String(req.params.keyword).toLowerCase();
 
   const result = mahasiswa.filter((item) =>
     item.nama.toLowerCase().includes(keyword)
